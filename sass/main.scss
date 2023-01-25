@@ -1,0 +1,430 @@
+@use './colors' as *;
+@use './animate' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-padding-top: 82px;
+}
+
+body {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	background-color: $bg-color;
+}
+
+.shadow-bg {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.underline {
+	margin: 0 auto 40px;
+	width: 60px;
+	height: 4px;
+	background-color: $main-color;
+}
+
+nav {
+	text-transform: uppercase;
+	z-index: 3;
+	transition: background-color 0.6s;
+
+	a,
+	i {
+		color: $color-white;
+		transition: color 0.3s;
+	}
+
+	a:hover {
+		color: $main-color;
+	}
+
+	.navbar-brand {
+		font-weight: bold;
+	}
+
+	.active {
+		color: $main-color;
+	}
+
+	.ti-menu-2 {
+		padding: 10px;
+		font-size: 30px;
+	}
+}
+
+.blue-color {
+	color: $main-color;
+}
+
+// hero img
+
+header {
+	color: $color-white;
+
+	.hero-img {
+		position: relative;
+		height: 100vh;
+		background-image: url('../img/playstation-g171895a98_640.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center;
+		z-index: 0;
+	}
+	.hero-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -10;
+	}
+	.hero-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		height: 100%;
+		z-index: 5;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 30px;
+		text-transform: uppercase;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	.btn-outline-light {
+		text-transform: uppercase;
+	}
+
+	.ti-chevron-down {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 30px;
+		color: $color-white;
+	}
+}
+
+.aboutus {
+	i {
+		margin-top: 20px;
+		font-size: 40px;
+	}
+
+	.aboutus-card-title {
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+
+	.aboutus-card-text {
+		font-size: 14px;
+	}
+
+	.aboutus-hover {
+		transition: color 0.3s;
+	}
+
+	.aboutus-hover:hover {
+		color: $main-color;
+	}
+}
+
+.desktop {
+	.desktop-img {
+		position: relative;
+		background-image: url('../img/technology-g66f3b571a_640.jpg');
+		background-size: cover;
+		background-position: 0 50%;
+		z-index: 0;
+		color: $color-white;
+	}
+
+	.desktop-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -10;
+	}
+
+	.aboutus-hero-item {
+		margin: 10px 0;
+	}
+
+	i {
+		font-size: 36px;
+	}
+
+	.aboutus-hero-title {
+		font-size: 24px;
+	}
+}
+
+// slider
+
+.portfolio {
+	.carousel-item {
+		position: relative;
+		height: 600px;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		padding: 40px 0;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.carousel-indicators {
+		padding-bottom: 20px;
+	}
+}
+
+.prices {
+	.price-box {
+		margin: 20px 10px;
+		padding: 30px;
+		background-color: $color-white;
+		box-shadow: 4px 4px 3px gray;
+		transition: transform 0.3s;
+
+		h3 {
+			color: $main-color;
+			text-transform: uppercase;
+		}
+
+		i {
+			padding: 0 5px;
+			font-size: 24px;
+		}
+
+		span {
+			font-weight: bold;
+		}
+
+		button {
+			padding: 10px 20px;
+			text-transform: uppercase;
+		}
+
+		.price-tag {
+			font-weight: bold;
+			font-size: 24px;
+		}
+	}
+
+	.price-box:hover {
+		transform: scale(1.05);
+	}
+
+	.price-info {
+		margin-top: 30px;
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.team {
+	position: relative;
+	background-image: url('../img/chairs-g26a0714ee_1920.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 2;
+
+	.card-footer {
+		font-size: 30px;
+		color: $main-color;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h2 {
+		color: $bg-color;
+		z-index: 2;
+	}
+	.underline {
+		z-index: 2;
+	}
+
+	.card-body {
+		height: 160px;
+	}
+	.card {
+		transition: transform 0.3s;
+		img {
+			height: 300px;
+			object-fit: cover;
+		}
+
+		i {
+			padding: 10px;
+		}
+	}
+
+	.card:hover {
+		transform: scale(0.96);
+	}
+
+	.team-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: -1;
+	}
+	.card-title {
+		margin-bottom: 20px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.achievements {
+	i {
+		padding: 20px;
+		font-size: 48px;
+		color: $color-white;
+		text-shadow: 0 0 5px #000;
+	}
+	.achievements-list {
+		padding: 20px 0;
+	}
+
+	.achievement-number {
+		font-size: 22px;
+	}
+
+	.achievement-text {
+		font-size: 13px;
+		text-transform: uppercase;
+	}
+}
+
+.contact {
+	position: relative;
+	background-image: url('../img/contact/skyline-gd62ab4ed2_640.jpg');
+	background-position: bottom;
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: 0;
+
+	h2 {
+		color: $bg-color;
+		font-weight: bold;
+	}
+
+	.underline {
+		background-color: $bg-color;
+	}
+
+	.contact-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 9, 27, .8);
+		z-index: -5;
+	}
+
+	.contact-us {
+		display: flex;
+		align-items: center;
+		color: $color-white;
+
+		.contact-item {
+			margin: 30px 0;
+			h3 {
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+
+			.social-media {
+				font-size: 26px;
+				a {
+					padding: 10px;
+					color: $color-white;
+					text-decoration: none;
+				}
+
+				a:hover {
+					color: $bg-color;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 375px) {
+	header {
+		h1 {
+			font-size: 34px;
+		}
+
+		p {
+			font-size: 16px;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+	header {
+		h1 {
+			font-size: 42px;
+		}
+
+		p {
+			font-size: 23px;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	header {
+		.hero-img {
+			background-image: url('../img/playstation-g09f5d3411_1920.jpg');
+		}
+	}
+}
+@media (min-width: 992px) {
+	nav {
+		height: 82px;
+	}
+
+	.desktop {
+		.desktop-img {
+			background-image: url('../img/technology-gbdd7fa35b_1280.jpg');
+		}
+	}
+
+	.prices {
+		.price-info {
+			font-size: 18px;
+		}
+	}
+	.contact {
+		background-image: url('../img/contact/skyline-gcf32235d7_1920.jpg');
+	}
+}
